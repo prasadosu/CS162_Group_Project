@@ -85,11 +85,11 @@ void Simulation::Run()
 		{
 			if (sampleBoard[r][c] == 1)
 			{
-				board[r][c] = new Ant(r, c);
+				board[r][c] = new Ant(r, c, rows, cols);
 			}
 			else if (sampleBoard[r][c] == 2)
 			{
-				board[r][c] = new Doodlebug(r, c);
+				board[r][c] = new Doodlebug(r, c, rows, cols);
 			}
 			else
 			{

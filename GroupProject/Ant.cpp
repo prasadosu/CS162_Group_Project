@@ -1,6 +1,6 @@
 #include "Ant.h"
 
-Ant::Ant(int row, int col) : Critter(row, col)
+Ant::Ant(int row, int col, int rowSize, int colSize) : Critter(row, col, rowSize, colSize)
 {
 }
 

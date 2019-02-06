@@ -9,7 +9,7 @@ private:
 	int posY;
 
 public:
-	Ant(int row, int col);
+	Ant(int row, int col, int rowSize, int colSize);
 	~Ant();
 
 	// Getters

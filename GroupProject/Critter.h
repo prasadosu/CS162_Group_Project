@@ -9,12 +9,16 @@ private:
 	bool moved;
 	int row;
 	int col;
+	int rowSize;
+	int colSize;
 
 public:
-	Critter(int row, int col)
+	Critter(int row, int col, int rowSize, int colSize)
 	{ 
 		this->row = row;
 		this->col = col;
+		this->rowSize = rowSize;
+		this->colSize = colSize;
 		this->moved = false;
 	}
 
