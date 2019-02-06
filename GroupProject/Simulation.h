@@ -7,7 +7,8 @@
 **	Ants(prey) and Doodlebugs(predators) move, breed and starve in a 2D grid
 ******************************************************************************/
 
-#pragma once
+#ifndef SIMULATION_H
+#define SIMULATION_H
 
 #include <vector>
 using std::vector;
@@ -48,3 +49,4 @@ public:
 	void Run();
 };
 
+#endif

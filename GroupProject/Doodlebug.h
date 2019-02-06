@@ -1,4 +1,6 @@
-#pragma once
+#ifndef DOODLEBUG_H
+#define DOODLEBUG_H
+
 #include "Critter.h"
 
 class Doodlebug :
@@ -14,3 +16,4 @@ public:
 	Type GetType();
 };
 
+#endif

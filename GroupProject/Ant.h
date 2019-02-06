@@ -1,4 +1,7 @@
-#pragma once
+#ifndef ANT_H
+#define ANT_H
+
+
 #include "Critter.h"
 
 class Ant :
@@ -13,3 +16,4 @@ public:
 	Type GetType();
 };
 
+#endif
