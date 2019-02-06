@@ -1,7 +1,6 @@
 #ifndef ANT_H
 #define ANT_H
 
-
 #include "Critter.h"
 #include "randNum.hpp"
 
