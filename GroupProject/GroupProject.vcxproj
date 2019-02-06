@@ -118,12 +118,14 @@
     <ClInclude Include="Critter.h" />
     <ClInclude Include="Doodlebug.h" />
     <ClInclude Include="iohelper.h" />
+    <ClInclude Include="randNum.hpp" />
     <ClInclude Include="Simulation.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Ant.cpp" />
     <ClCompile Include="Doodlebug.cpp" />
     <ClCompile Include="iohelper.cpp" />
+    <ClCompile Include="randNum.cpp" />
     <ClCompile Include="Simulation.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
