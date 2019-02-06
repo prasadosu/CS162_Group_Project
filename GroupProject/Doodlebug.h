@@ -5,7 +5,7 @@ class Doodlebug :
 	public Critter
 {
 public:
-	Doodlebug(int row, int col);
+	Doodlebug(int row, int col, int rowSize, int colSize);
 	~Doodlebug();
 
 	void Move(Critter*** &board);

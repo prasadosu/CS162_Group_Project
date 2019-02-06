@@ -1,6 +1,6 @@
 #include "Doodlebug.h"
 
-Doodlebug::Doodlebug(int row, int col) : Critter(row, col)
+Doodlebug::Doodlebug(int row, int col, int rowSize, int colSize) : Critter(row, col, rowSize, colSize)
 {
 }
 
