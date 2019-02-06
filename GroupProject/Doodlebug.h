@@ -5,11 +5,11 @@ class Doodlebug :
 	public Critter
 {
 public:
-	Doodlebug();
+	Doodlebug(int row, int col);
 	~Doodlebug();
 
-	void Move();
-	void Breed();
+	void Move(Critter*** &board);
+	void Breed(Critter*** &board);
 	void Starve();
 	Type GetType();
 };

@@ -1,6 +1,6 @@
 #include "Ant.h"
 
-Ant::Ant()
+Ant::Ant(int row, int col) : Critter(row, col)
 {
 }
 
@@ -8,11 +8,11 @@ Ant::~Ant()
 {
 }
 
-void Ant::Move()
+void Ant::Move(Critter*** &board)
 {
 }
 
-void Ant::Breed()
+void Ant::Breed(Critter*** &board)
 {
 }
 

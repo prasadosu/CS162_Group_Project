@@ -32,7 +32,7 @@ private:
 	int startingAnts;	// Initial ants on board
 	int startingBugs;	// Initial bugs on board
 
-	vector< vector<Critter*> > board;
+	Critter*** board;
 	void makeMoves(Critter::Type type);
 	void doBreedAndStarve();
 

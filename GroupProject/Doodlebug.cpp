@@ -1,6 +1,6 @@
 #include "Doodlebug.h"
 
-Doodlebug::Doodlebug()
+Doodlebug::Doodlebug(int row, int col) : Critter(row, col)
 {
 }
 
@@ -8,11 +8,11 @@ Doodlebug::~Doodlebug()
 {
 }
 
-void Doodlebug::Move()
+void Doodlebug::Move(Critter*** &board)
 {
 }
 
-void Doodlebug::Breed()
+void Doodlebug::Breed(Critter*** &board)
 {
 }
 

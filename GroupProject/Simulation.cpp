@@ -15,9 +15,13 @@ Simulation::Simulation() :
 	rows(DEFAULT_ROWS),		
 	cols (DEFAULT_COLS), 
 	startingAnts(DEFAULT_ANTS),
-	startingBugs(DEFAULT_BUGS),
-	board(DEFAULT_ROWS, vector<Critter*>(DEFAULT_COLS))
+	startingBugs(DEFAULT_BUGS)
 {
+	board = new Critter**[rows];
+	for (int i = 0; i < rows; i++)
+	{
+		board[i] = new Critter*[cols];
+	}
 }
 
 // Custom simulation constructor
@@ -25,9 +29,13 @@ Simulation::Simulation(int rows, int cols, int startingAnts, int startingBugs) :
 	rows(rows),
 	cols(cols),
 	startingAnts(startingAnts),
-	startingBugs(startingBugs),
-	board(rows, vector<Critter*>(cols))
+	startingBugs(startingBugs)
 {
+	board = new Critter**[rows];
+	for (int i = 0; i < rows; i++)
+	{
+		board[i] = new Critter*[cols];
+	}
 }
 
 Simulation::~Simulation()
@@ -38,7 +46,9 @@ Simulation::~Simulation()
 		{
 			delete board[r][c];
 		}
+		delete[] board[r];
 	}
+	delete[] board;
 }
 
 // Main program loop
@@ -75,11 +85,15 @@ void Simulation::Run()
 		{
 			if (sampleBoard[r][c] == 1)
 			{
-				board[r][c] = new Ant();
+				board[r][c] = new Ant(r, c);
 			}
 			else if (sampleBoard[r][c] == 2)
 			{
-				board[r][c] = new Doodlebug();
+				board[r][c] = new Doodlebug(r, c);
+			}
+			else
+			{
+				board[r][c] = nullptr;
 			}
 		}
 	}
@@ -125,7 +139,7 @@ void Simulation::makeMoves(Critter::Type type)
 				board[r][c]->GetType() == type &&
 				board[r][c]->hasMoved() == false)
 			{
-				board[r][c]->Move();	// Move should update moved bool
+				board[r][c]->Move(board);	// Move should update moved bool
 			}
 		}
 	}
@@ -139,7 +153,7 @@ void Simulation::doBreedAndStarve()
 		{
 			if (board[r][c]) 
 			{
-				board[r][c]->Breed();
+				board[r][c]->Breed(board);
 				board[r][c]->Starve();
 			}
 		}

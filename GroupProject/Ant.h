@@ -5,11 +5,11 @@ class Ant :
 	public Critter
 {
 public:
-	Ant();
+	Ant(int row, int col);
 	~Ant();
 
-	void Move();
-	void Breed();
+	void Move(Critter*** &board);
+	void Breed(Critter*** &board);
 	Type GetType();
 };
 
