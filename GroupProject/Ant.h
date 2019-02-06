@@ -1,4 +1,7 @@
-#pragma once
+#ifndef ANT_H
+#define ANT_H
+
+
 #include "Critter.h"
 #include "randNum.hpp"
 
@@ -31,3 +34,5 @@ public:
 	void Breed(Critter*** &board);
 	Type GetType();
 };
+
+#endif

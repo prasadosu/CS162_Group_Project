@@ -1,4 +1,5 @@
-#pragma once
+#ifndef CRITTER_H
+#define CRITTER_H
 
 class Critter
 {
@@ -43,3 +44,4 @@ public:
 	virtual ~Critter() {}
 };
 
+#endif
