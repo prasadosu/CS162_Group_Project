@@ -138,20 +138,6 @@ void Doodlebug::Move(Critter*** &board)
 	}
 	age++;
 	moved = true;
-	/*Hey guys, I'm not sure if I need to manually deallocate these arrays. Is this right or will
-	the function automatically do so when it ends?*/
-	//deallocate the integer arrays that were dynamically allocated.
-	for (int i = 0; i < numSpaces; i++)
-	{
-		delete validSpaces[numSpaces];
-	}
-	delete[] validSpaces;
-
-	for (int j = 0; j < numAnts; j++)
-	{
-		delete ants[numAnts];
-	}
-	delete[] ants;
 
 }//end move
 
