@@ -136,8 +136,22 @@ void Doodlebug::Move(Critter*** &board)
 	{
 		fed--;
 	}
+
 	age++;
 	moved = true;
+
+	//deallocate array data:
+	for (int i = 0; i < numSpaces; i++)
+	{
+		delete validSpaces[i];
+	}
+	delete[] validSpaces;
+
+	for (int j = 0; j < numAnts; j++)
+	{
+		delete ants[j];
+	}
+	delete[] ants;
 
 }//end move
 
