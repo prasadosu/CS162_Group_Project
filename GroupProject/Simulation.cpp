@@ -177,7 +177,14 @@ void Simulation::doBreedAndStarve()
 			if (board[r][c]) 
 			{
 				board[r][c]->Breed(board);
-				board[r][c]->Starve();
+				if (board[r][c]->GetType() == Critter::Type::Doodlebug)
+				{
+					if (board[r][c]->Starve())
+					{
+						delete board[r][c];
+						board[r][c] = nullptr;
+					}//end if starve
+				}//end if doodlebug
 			}
 		}
 	}

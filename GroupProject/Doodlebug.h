@@ -6,14 +6,16 @@
 class Doodlebug :
 	public Critter
 {
+private:
+	int fed;
 public:
 	Doodlebug(int row, int col, int rowSize, int colSize);
 	~Doodlebug();
-
 	void Move(Critter*** &board);
 	void Breed(Critter*** &board);
-	void Starve();
+	bool Starve();
 	Type GetType();
+	bool validSpace(int nextRow, int nextCol);
 };
 
 #endif
