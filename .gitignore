@@ -90,6 +90,10 @@ ipch/
 *.vspx
 *.sap
 
+######## ADDING !!!!
+*.vcxproj
+########
+
 # TFS 2012 Local Workspace
 $tf/
 
