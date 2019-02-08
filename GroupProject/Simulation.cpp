@@ -203,6 +203,8 @@ int Simulation::breed(Critter::Type type)
 			{
 				if (board[r][c]->Breed(board))
 				{
+					printString("Doodlebug breeds at " + std::to_string(r) + " : " +
+						std::to_string(c));
 					++total;
 				}
 			}
