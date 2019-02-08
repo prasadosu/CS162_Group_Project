@@ -1,6 +1,7 @@
 #include "Doodlebug.h"
 #include <cstdlib>
-#include <ctime>
+//#include <ctime>
+#include <iostream>	// FOR DE'BUG'GING (Get it?)
 
 Doodlebug::Doodlebug(int row, int col, int rowSize, int colSize) : Critter(row, col, rowSize, colSize)
 {
@@ -107,7 +108,7 @@ void Doodlebug::Move(Critter*** &board)
 	//if there are ants to in adjacent spaces to be eaten
 	if (numAnts)
 	{
-		srand(time(NULL));
+		//srand(time(NULL));
 		randNum = rand() % numAnts; //get a random neighboring ant
 		nextRow = ants[randNum][0]; //get the ant's row coordinate
 		nextCol = ants[randNum][1]; //get the ant's col coordinate
@@ -116,12 +117,13 @@ void Doodlebug::Move(Critter*** &board)
 		row = nextRow; //update row
 		col = nextCol; //update col
 		board[row][col] = this; //move to space ant occuppied.
+		std::cout << "Doodlebug eats ant at " << row << " : " << col << std::endl; // DEBUG
 		fed = 3; //update fed status of doodlebug
 	}
 	//if there aren't any ants but there are empty adjacent spaces to move into
 	else if(numSpaces)
 	{
-		srand(time(NULL));
+		//srand(time(NULL));
 		randNum = rand() % numSpaces; //randomly get an adjacent empty space
 		nextRow = validSpaces[randNum][0]; //get row coordinate of empty space
 		nextCol = validSpaces[randNum][1]; //get col coordinate of empty space
@@ -155,8 +157,9 @@ void Doodlebug::Move(Critter*** &board)
 
 }//end move
 
-void Doodlebug::Breed(Critter*** &board)
+bool Doodlebug::Breed(Critter*** &board)
 {
+	return false;
 }
 
 bool Doodlebug::Starve()
